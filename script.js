@@ -191,6 +191,20 @@ async function main() {
 
           }
    })
+
+  //  port
+  // Inside your script.js file
+
+fetch('http://127.0.0.1:3000/songs/ncs/', {
+  mode: 'no-cors'
+})
+.then(response => {
+  // You won't be able to access the response data here due to 'no-cors' mode
+  console.log('Request successful (but response data inaccessible)');
+})
+.catch(error => {
+  console.error(error);
+});
 }
 
 main(); // Start the main function when the script loads
