@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utillities.css">
+</head>
+<body>
+  
+    <div class="container bg-black">
+        <div class="left item-center bg-black">
+            <div class="col1">
+              <div class="close">
+               <img src="close.svg" alt="" class="invert">
+              </div>
+                <div class="logo">
+                    <img src="logo.svg" alt="logo" class="invert">
+                </div>
+                <ul>
+                    <li><img src="home.svg" alt="home" class="invert">Home</li>
+                    <li><img src="search.svg" alt="search" class="invert">Search</li>
+                </ul>
+            </div>
+            <!-- col2 -->
+
+            <div class="col2 bg-grey">
+               <div class="heading">
+                <img src="playlist.svg" alt="playlist" class="invert"/>
+                <h2>Your library</h2>
+               </div>
+
+               <div class="songlist">
+                  <ul>
+                    
+                    <!-- one li is present for understand the elemet how it works -->
+                    <li>1.Song Name</li>
+                    <!-- another well be created by js -->
+                  </ul>
+               </div>
+
+               <div class="footer">
+                <div>
+                    <a href="https://www.spotify.com/pk-en/legal/" data-encore-id="textLink">
+                      <span data-encore-id="type">Legal</span>
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      href="https://www.spotify.com/pk-en/safetyandprivacy/"
+                      data-encore-id="textLink">
+                      <span data-encore-id="type">Safety &amp; Privacy Center</span>
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      href="https://www.spotify.com/pk-en/legal/privacy-policy/"
+                      data-encore-id="textLink">
+                      <span data-encore-id="type">Privacy Policy</span>
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      href="https://www.spotify.com/pk-en/legal/cookies-policy/"
+                      data-encore-id="textLink">
+                      <span data-encore-id="type">Cookies</span> 
+                    </a>
+                  </div>
+                
+                  <div>
+                    <a
+                      href="https://www.spotify.com/pk-en/legal/privacy-policy/#s3"
+                      data-encore-id="textLink">
+                      <span data-encore-id="type">About Ads</span>
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      href="https://www.spotify.com/pk-en/accessibility/"
+                      data-encore-id="textLink"
+                    >
+                      <span data-encore-id="type">Accessibility</span>
+                    </a>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- right section -->
+
+        <div class="right bg-grey">
+          <div class="header-nav">
+            <div class="hamburger">
+              <img src="hamburger.svg" alt="" class="invert">
+            </div>
+            <div class="icon">
+                <img src="leftarrow.svg" alt="leftarrow">
+                <img src="rightarrow.svg" alt="rightarrow">
+            </div>
+            <div class="button">
+                <button class="signup"><a href="#">Sign up</a></button>
+                <button class="login"><a href="#">Login</a></button>
+            </div>
+          </div>
+          
+          <div class="spotify-playlist">
+               <div class="heading flex p-1">
+                <h1>Popular Artist</h1>
+                <span>Show All</span>
+               </div>
+
+               <div class="card-container">
+
+                <div class="card" data-folder="atifaslam">
+                  <div class="play-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" color="#000000" fill="#000">
+                      <circle cx="32" cy="32" r="30" fill="#1DB954"/>
+                      <path d="M34.8906 32.846C34.5371 34.189 32.8667 35.138 29.5257 37.0361C26.296 38.8709 24.6812 39.7884 23.3798 39.4196C22.8418 39.2671 22.3516 38.9776 21.9562 38.5787C21 37.6139 21 35.7426 21 32C21 28.2574 21 26.3861 21.9562 25.4213C22.3516 25.0224 22.8418 24.7329 23.3798 24.5804C24.6812 24.2117 26.296 25.1291 29.5257 26.9639C32.8667 28.862 34.5371 29.811 34.8906 31.154C35.0365 31.7084 35.0365 32.2916 34.8906 32.846Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <img src="./images/1.jpeg" alt="image">
+                  <h2>NCS</h2>
+                  <p>Artist</p>
+                </div>
+                <div class="card" data-folder="taylorswift">
+                  <div class="play-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" color="#000000" fill="#000">
+                      <circle cx="32" cy="32" r="30" fill="#1DB954"/>
+                      <path d="M34.8906 32.846C34.5371 34.189 32.8667 35.138 29.5257 37.0361C26.296 38.8709 24.6812 39.7884 23.3798 39.4196C22.8418 39.2671 22.3516 38.9776 21.9562 38.5787C21 37.6139 21 35.7426 21 32C21 28.2574 21 26.3861 21.9562 25.4213C22.3516 25.0224 22.8418 24.7329 23.3798 24.5804C24.6812 24.2117 26.296 25.1291 29.5257 26.9639C32.8667 28.862 34.5371 29.811 34.8906 31.154C35.0365 31.7084 35.0365 32.2916 34.8906 32.846Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <img src="./images/2.jpeg" alt="image">
+                  <h2>Atif Aslam</h2>
+                  <p>Artist</p>
+                </div>
+
+                   <div class="card" data-folder="jubin">
+                    <div class="play-btn">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" color="#000000" fill="#000">
+                        <circle cx="32" cy="32" r="30" fill="#1DB954"/>
+                        <path d="M34.8906 32.846C34.5371 34.189 32.8667 35.138 29.5257 37.0361C26.296 38.8709 24.6812 39.7884 23.3798 39.4196C22.8418 39.2671 22.3516 38.9776 21.9562 38.5787C21 37.6139 21 35.7426 21 32C21 28.2574 21 26.3861 21.9562 25.4213C22.3516 25.0224 22.8418 24.7329 23.3798 24.5804C24.6812 24.2117 26.296 25.1291 29.5257 26.9639C32.8667 28.862 34.5371 29.811 34.8906 31.154C35.0365 31.7084 35.0365 32.2916 34.8906 32.846Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <img src="./images/3.jpeg" alt="image">
+                    <h2>Pritam</h2>
+                    <p>Artist</p>
+                   </div>
+                   <div class="card" data-folder="junaid">
+                    <div class="play-btn">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" color="#000000" fill="none">
+                        <circle cx="32" cy="32" r="30" fill="#1DB954"/>
+                        <path d="M34.8906 32.846C34.5371 34.189 32.8667 35.138 29.5257 37.0361C26.296 38.8709 24.6812 39.7884 23.3798 39.4196C22.8418 39.2671 22.3516 38.9776 21.9562 38.5787C21 37.6139 21 35.7426 21 32C21 28.2574 21 26.3861 21.9562 25.4213C22.3516 25.0224 22.8418 24.7329 23.3798 24.5804C24.6812 24.2117 26.296 25.1291 29.5257 26.9639C32.8667 28.862 34.5371 29.811 34.8906 31.154C35.0365 31.7084 35.0365 32.2916 34.8906 32.846Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <img src="./images/4.jpeg" alt="image">
+                    <h2>Pritam</h2>
+                    <p>Artist</p>
+                   </div>
+                   <div class="card" data-folder="ketty">
+                    <div class="play-btn">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" color="#000000" fill="none">
+                        <circle cx="32" cy="32" r="30" fill="#1DB954"/>
+                        <path d="M34.8906 32.846C34.5371 34.189 32.8667 35.138 29.5257 37.0361C26.296 38.8709 24.6812 39.7884 23.3798 39.4196C22.8418 39.2671 22.3516 38.9776 21.9562 38.5787C21 37.6139 21 35.7426 21 32C21 28.2574 21 26.3861 21.9562 25.4213C22.3516 25.0224 22.8418 24.7329 23.3798 24.5804C24.6812 24.2117 26.296 25.1291 29.5257 26.9639C32.8667 28.862 34.5371 29.811 34.8906 31.154C35.0365 31.7084 35.0365 32.2916 34.8906 32.846Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <img src="./images/5.jpeg" alt="image">
+                    <h2>Pritam</h2>
+                    <p>Artist</p>
+                   </div>
+                   <div class="card" data-folder="junifer">
+                    <div class="play-btn">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" color="#000000" fill="none">
+                        <circle cx="32" cy="32" r="30" fill="#1DB954"/>
+                        <path d="M34.8906 32.846C34.5371 34.189 32.8667 35.138 29.5257 37.0361C26.296 38.8709 24.6812 39.7884 23.3798 39.4196C22.8418 39.2671 22.3516 38.9776 21.9562 38.5787C21 37.6139 21 35.7426 21 32C21 28.2574 21 26.3861 21.9562 25.4213C22.3516 25.0224 22.8418 24.7329 23.3798 24.5804C24.6812 24.2117 26.296 25.1291 29.5257 26.9639C32.8667 28.862 34.5371 29.811 34.8906 31.154C35.0365 31.7084 35.0365 32.2916 34.8906 32.846Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <img src="./images/6.jpeg" alt="image">
+                    <h2>Pritam</h2>
+                    <p>Artist</p>
+                   </div>
+                   <div class="card" data-folder="justin">
+                    <div class="play-btn">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" color="#000000" fill="none">
+                        <circle cx="32" cy="32" r="30" fill="#1DB954"/>
+                        <path d="M34.8906 32.846C34.5371 34.189 32.8667 35.138 29.5257 37.0361C26.296 38.8709 24.6812 39.7884 23.3798 39.4196C22.8418 39.2671 22.3516 38.9776 21.9562 38.5787C21 37.6139 21 35.7426 21 32C21 28.2574 21 26.3861 21.9562 25.4213C22.3516 25.0224 22.8418 24.7329 23.3798 24.5804C24.6812 24.2117 26.296 25.1291 29.5257 26.9639C32.8667 28.862 34.5371 29.811 34.8906 31.154C35.0365 31.7084 35.0365 32.2916 34.8906 32.846Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <img src="./images/7.jpeg" alt="image">
+                    <h2>Pritam</h2>
+                    <p>Artist</p>
+                   </div>
+               </div>
+
+          </div>
+
+           <div class="playbar-container">
+            <div class="volume">
+              <img src="volume.svg" alt="volume">
+              <input type="range" name="range" id="range">
+              <span id="volume-value" class="invert"></span>
+            </div>
+            <div class="seekbar">
+              <div class="circle"></div>
+            </div>
+            <div class="abovebar">
+
+            
+            <div class="songinfo invert">
+        
+            </div>
+              <div class="songbutton">
+                <img src="prevsong.svg" alt="Previous button" id="previous">
+                <img src="play.svg" alt="Play Button" id="play">
+                <img src="forwsong.svg" alt="Next Button" id="next">
+              </div>
+              <div class="songtime">
+          
+              </div>
+              </div>
+           </div>
+          
+        </div>
+
+        
+    </div>
+
+   
+  
+   
+
+</body>
+
+
+<script src="script.js"></script> 
+
+</html>

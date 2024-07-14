@@ -1,0 +1,136 @@
+learn about split little
+learn about await and async 
+learn about replace and replaceAll and %
+for of where mostly used 
+
+
+split is giving us an two array and [1] [0] mean take one or after it one of these array 
+
+example 
+
+
+Sure! Here are the notes for the provided JavaScript code:
+
+### JavaScript Code Overview
+
+The code is designed to fetch a list of songs from a server, display them in a list, and enable playing the songs. The main focus is on fetching data asynchronously and manipulating the DOM to display the song list.
+
+### Key Concepts Covered
+
+1. **Asynchronous JavaScript (async/await)**
+2. **DOM Manipulation**
+3. **Event Handling**
+4. **Audio Playback**
+
+### Code Breakdown
+
+#### Console Log
+
+```javascript
+console.log("Let's start JavaScript now. Don't be demotivated, please, even if it gives you a tough time.");
+```
+- Outputs a motivational message to the console.
+
+#### Fetching Songs
+
+```javascript
+async function getSong() {
+  let a = await fetch("http://127.0.0.1:3000/songs/");
+  let response = await a.text();
+  let div = document.createElement("div");
+  div.innerHTML = response;
+  let as = div.getElementsByTagName("a");
+
+  let songs = [];
+  for (let i = 0; i < as.length; i++) {
+    const element = as[i];
+    if (element.href.endsWith(".mp3")) {
+      songs.push(element.href.split("/songs/")[1]);
+    }
+  }
+  return songs;
+}
+```
+- **Purpose**: Fetches a list of songs from the server.
+- **async/await**: Handles asynchronous operations.
+  - `await fetch(url)`: Fetches data from the server.
+  - `await a.text()`: Converts the response to text.
+- **DOM Manipulation**: Creates a temporary div to parse the fetched HTML and extract song links.
+
+#### Main Function
+
+```javascript
+async function main() {
+  // current li 
+  Array.from(document.querySelector(".songlist").getElementsByTagName("li")).forEach(e => {
+    console.log(e.querySelector('.info').firstElementChild.innerHTML);
+  });
+
+  // get the list of all the songs
+  let songs = await getSong();
+  console.log(songs);
+
+  // put all songs in library 
+  let songUL = document.querySelector(".songlist ul");
+  for (const song of songs) {
+    songUL.innerHTML += `<li> 
+        <img src="music.svg" alt="music" class="invert">
+        <div class="info">
+          <h3>${song.replaceAll("%20", " ")}</h3>
+          <p>Sohaib Hassan</p>
+        </div>
+        <div class="play">
+          <span>Play Now</span>
+          <img src="play.svg" alt="play" class="invert">
+        </div> 
+      </li>`;
+  }
+
+  // play the first song (only works with user interaction)
+  var audio = new Audio('http://127.0.0.1:3000/songs/' + songs[0]);
+  document.querySelector(".play img").addEventListener("click", () => {
+    audio.play();
+  });
+}
+
+main();
+```
+- **current li**: Logs the song titles currently present in the `.songlist`.
+- **Fetching Songs**: Calls `getSong()` to get the list of songs.
+- **Logging Songs**: Outputs the list of songs to the console.
+- **Displaying Songs**: 
+  - Selects the `<ul>` inside the `.songlist` class.
+  - Loops through the list of songs and appends each song as an `<li>` element.
+  - Uses `replaceAll` to replace `%20` with spaces in the song names.
+- **Playing the First Song**: 
+  - Creates an `Audio` object with the first song.
+  - Adds an event listener to play the song when the play button is clicked.
+
+### Notes
+
+1. **Asynchronous JavaScript**:
+   - `async` and `await` are used to handle asynchronous operations in a more readable way compared to promises or callbacks.
+
+2. **DOM Manipulation**:
+   - `document.createElement("div")`: Creates a new `div` element.
+   - `div.innerHTML = response`: Sets the HTML content of the `div`.
+   - `div.getElementsByTagName("a")`: Retrieves all anchor (`<a>`) elements.
+   - `document.querySelector(".songlist ul")`: Selects the `<ul>` element inside the `.songlist` class.
+   - `element.href.split("/songs/")[1]`: Extracts the song name from the URL.
+
+3. **Event Handling**:
+   - `document.querySelector(".play img").addEventListener("click", () => { audio.play(); });`: Adds a click event listener to the play button.
+
+4. **Audio Playback**:
+   - `var audio = new Audio('http://127.0.0.1:3000/songs/' + songs[0]);`: Creates a new `Audio` object with the first song's URL.
+   - **Note**: Due to browser security policies, audio playback requires user interaction, which is why the `audio.play()` is placed inside a click event listener.
+
+### Common Errors
+
+1. **play() failed because the user didn't interact with the document first**:
+   - Browser security policies require user interaction to start audio playback. Ensure audio is played in response to a user action, like a click event.
+
+2. **Cannot read properties of null (reading 'addEventListener')**:
+   - This error indicates that the selector did not match any elements. Verify that the correct element is being selected and exists in the DOM before the event listener is added.
+
+By understanding these key points and common errors, you can effectively use asynchronous JavaScript, manipulate the DOM, handle events, and work with audio playback in your web applications.

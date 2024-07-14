@@ -1,0 +1,106 @@
+.border{
+     border: 2px solid red;
+}
+
+.item-center{
+ align-items: center;
+  
+}
+
+.justify-content{
+    justify-content: space-between;
+}
+.bg-black{
+    background-color: black;
+    color: white;
+}
+.invert{
+    filter: invert(1);
+}
+
+.bg-grey{
+    background-color: #121212;
+}
+
+.rounded{
+    border-radius: 7px;
+}
+
+.m-1{
+    margin: 5px;
+}
+
+.p-1{
+    padding: 10px;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+
+/* scroll bar */
+/* Custom scrollbar for webkit-based browsers (Chrome, Safari) */
+/* styles.css */
+/* Custom scrollbar for webkit-based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; /* Transparent background for the track */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+    border: 3px solid transparent; /* Make the border transparent */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Custom scrollbar for Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #888 transparent; /* Transparent track background */
+}
+
+/* For Firefox 64 and older */
+body {
+    scrollbar-width: thin;
+    scrollbar-color: #888 transparent; /* Transparent track background */
+}
+
+/* Optional: For elements with specific classes */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #888 transparent; /* Transparent track background */
+}
+
+/* Applying the styles to specific containers if needed */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 12px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent; /* Transparent background for the track */
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+    border: 3px solid transparent; /* Make the border transparent */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* scroll bar end */

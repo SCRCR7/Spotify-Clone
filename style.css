@@ -1,0 +1,413 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+/* container */
+.container {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+/* columns */
+.left {
+    width: 25vw;
+}
+
+.left .col1 {
+    height: 25vh;
+    margin: 10px 10px 5px 10px;
+    padding: 10px;
+    background-color: #121212;
+    border-top-right-radius: 6%;
+    border-bottom-left-radius: 6%;
+}
+
+.left .col1 .logo {
+    margin-bottom: 10px;
+}
+
+.left .col1 ul li {
+    display: flex;
+    width: 20px;
+    gap: 4px;
+    list-style: none;
+    margin-left: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+/* left box column 2 */
+.left .col2 {
+    height: 71vh;
+    margin: 0px 10px 0px 10px;
+    border-top-right-radius: 4%;
+    position: relative;
+}
+
+.col2 .heading {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+.heading img {
+    width: 22px;
+}
+
+.heading h2 {
+    font-size: 15px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    border: 2px solid forestgreen;
+    position: absolute;
+    bottom: 0px;
+}
+
+.footer a {
+    color: grey;
+}
+
+/* right section */
+.right {
+    width: 75vw;
+    margin: 13px 10px 15px 0px;
+    position: relative;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 40px;
+    background-color: rgb(34, 34, 34);
+    padding: 20px;
+}
+
+/* button */
+.button button {
+    background-color: transparent;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.header-nav .button .signup a {
+    margin: 10px 10px;
+    padding: 10px 20px;
+    color: #9b9393;
+}
+
+.header-nav .button .signup:hover a {
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.header-nav .button a {
+    font-size: 25px;
+    text-decoration: none;
+    background-color: transparent;
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+.button .login {
+    background-color: #fff;
+    padding: 8px 15px;
+    border-radius: 72px;
+}
+
+.button .login a {
+    color: #000;
+}
+
+.button .login:hover {
+    background-color: #bdb7b7;
+    transform: scale(1.05);
+    font-weight: bold;
+}
+
+/* card container */
+.card-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.spotify-playlist .card-container .card {
+    width: 175px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 7px;
+    margin: 10px 10px;
+    position: relative;
+}
+
+.spotify-playlist .card-container .card:hover {
+    background-color: #242323;
+    cursor: pointer;
+    transition: all 0.7s;
+}
+
+.spotify-playlist .card-container .card img {
+    width: 100%;
+    height: 175px; /* Ensures the images are square */
+    object-fit: cover;
+    border-radius: 50%; /* Ensures the images are circular */
+}
+
+.spotify-playlist .card-container .card .play-btn {
+    position: absolute;
+    bottom: 70px;
+    right: 15px;
+    display: none;
+    transition: all 2s ease-out;
+}
+
+.spotify-playlist .card-container .card:hover .play-btn {
+    display: block;
+}
+
+.playbar-container {
+    position: absolute;
+    bottom: 0px;
+    background-color: white;
+    width: 100%;
+    padding: 12px;
+}
+
+.playbar-container .songbutton {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.songlist ul {
+    padding: 40px;
+}
+
+.songlist ul li {
+    list-style-type: decimal;
+    display: flex;
+    gap: 30px;
+    padding: 25px;
+    cursor: pointer;
+    border: 2px solid white;
+    margin: 20px 0px;
+}
+
+.play {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.songlist {
+    height: 400px;
+    overflow: auto;
+}
+
+.seekbar {
+    width: 99%;
+    height: 6px;
+    border: 2px solid gray;
+    position: absolute;
+    bottom: 0px;
+    border-radius: 10px;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+.seekbar .circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(215, 130, 130);
+    position: absolute;
+    bottom: -9px;
+    left: 0%;
+    transition: left 0.5s;
+}
+
+/* songsbutton play prev and next */
+.songbutton img {
+    cursor: pointer;
+}
+
+.abovebar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.songtime {
+    color: black;
+}
+
+/* Hide pause button initially */
+/* hamburger display hidden on desktop */
+.hamburger {
+    display: none;
+}
+
+/* volume  */
+.volume{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* Webkit browsers (Chrome, Safari, Opera) */
+input[type="range"] {
+    -webkit-appearance: none; /* Override default CSS styles */
+    appearance: none;
+ /* Full-width */
+    height: 8px; /* Specified height */
+    background: #ddd; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Slightly transparent */
+    transition: opacity .2s; /* 0.2 seconds transition on hover */
+}
+
+/* Webkit Thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Width of the thumb */
+    height: 25px; /* Height of the thumb */
+    background: red; /* Red background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+/*hide close on desktop */
+.close {
+    position: relative;
+    top: 30px;
+    left: 90%;
+    cursor: pointer;
+    display: none;
+}
+
+/* volumevalue */
+/* Style the volume value display */
+#volume-value {
+    font-size: 14px; /* Change font size */
+    color: #e4d2d2; /* Change text color */
+    margin-left: 10px; /* Add some space between the slider and the value */
+    background-color: #000; /* Add background color */
+    padding: 2px 5px; /* Add padding for better readability */
+    border-radius: 4px; /* Add border radius for rounded corners */
+}
+
+
+/* Media Queries for different screen sizes */
+@media (max-width: 1450px) {
+    .left {
+        width: 30vw;
+        position: absolute; 
+        left: -100%;
+        z-index: 1;
+        transition: all .3s;
+    }
+
+    .right {
+        width: 100vw;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .close {
+        display: block;
+    }
+
+    .right .card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1200px) {
+    .left {
+        width: 35vw;
+    }
+
+    .right {
+        width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    .left {
+        width: 40vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .left {
+        width: 50vw;
+    }
+
+    .right .card-container {
+        flex-direction: column;
+    }
+
+    .playbar-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .left {
+        width: 60vw;
+    }
+
+    .right .card-container {
+        margin-bottom: 100px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .close {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .left {
+        width: 70vw;
+    }
+}
+
+@media (max-width: 320px) {
+    .left {
+        width: 100vw;
+    }
+
+    .right .card-container {
+        flex-direction: column;
+    }
+}
+
+/* Additional tweaks for small screens */
+@media (max-width: 320px) {
+    .left {
+        width: 100vw;
+    }
+    .left .col2
+}
